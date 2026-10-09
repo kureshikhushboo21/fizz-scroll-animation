@@ -1,9 +1,8 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "export",
-  basePath: "/fizz-scroll-animation",
-  assetPrefix: "/fizz-scroll-animation/",
+  basePath: process.env.NODE_ENV === "production" ? "/fizz-scroll-animation" : "",
+  assetPrefix: process.env.NODE_ENV === "production" ? "/fizz-scroll-animation/" : "",
   images: {
     unoptimized: true,
   },
